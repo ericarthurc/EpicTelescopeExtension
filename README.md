@@ -35,4 +35,4 @@ Project updated to Google's manifest V3 extension platform and currently being m
 ## Authors
 
 - **Mark Iannucci** - _Initial work_
-- **Eric Christensen (pheynnx)** - _Maintaining for EPIC Analysts_
+- **Eric Christensen** - _Maintaining for EPIC Analysts_
