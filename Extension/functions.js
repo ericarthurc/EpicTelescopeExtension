@@ -17,6 +17,7 @@ export function buildUrl(text) {
   const sherlockInitialURL = "https://sherlock.epic.com/default.aspx?";
   const communityLibraryURL = "https://comlib.epic.com";
   const systemPulseURL = "https://systempulse.epic.com";
+  const trainingHome = "https://training.epic.com";
 
   // if user enters a keyword after the omnibox keyword, redirect search to different destination
   const splitText = text.split(" ");
@@ -34,25 +35,22 @@ export function buildUrl(text) {
       } else if (secondWord.toLowerCase() === "new") {
         newURL = sherlockInitialURL + "view=slg/create";
       } else if (isNaN(secondWord)) {
-        newURL =
-          sherlockInitialURL +
+        newURL = sherlockInitialURL +
           "view=slg/search#txt=" +
           prepSearchString(text.substring(firstWord.length + 1));
       } else {
-        newURL =
-          sherlockInitialURL + "view=slg/search#id=" + secondWord + "&rv=0";
+        newURL = sherlockInitialURL + "view=slg/search#id=" + secondWord +
+          "&rv=0";
       }
       break;
     case "ra":
-      newURL =
-        sherlockInitialURL +
+      newURL = sherlockInitialURL +
         "view=ra/search#txt=" +
         prepSearchString(text.substring(firstWord.length + 1));
       break;
     case "nova":
       if (isNaN(secondWord)) {
-        newURL =
-          novaInitialURL +
+        newURL = novaInitialURL +
           "Search.aspx#addPt1&SearchTerm=" +
           prepSearchString(text.substring(firstWord.length + 1));
       } else {
@@ -60,36 +58,30 @@ export function buildUrl(text) {
       }
       break;
     case "topic":
-      newURL =
-        "https://userweb.epic.com/Search?Query=" +
+      newURL = "https://userweb.epic.com/Search?Query=" +
         prepSearchString(text.substring(firstWord.length + 1));
       break;
     case "galaxy":
-      newURL =
-        galaxyInitialURL +
+      newURL = galaxyInitialURL +
         prepSearchString(text.substring(firstWord.length + 1));
       break;
     case "dh":
-      newURL =
-        dhInitialURL +
+      newURL = dhInitialURL +
         prepSearchString(text.substring(firstWord.length + 1)) +
         "&type=1&scf=1,2,3&auf=1";
       break;
     case "cdd":
-      newURL =
-        dhInitialURL +
+      newURL = dhInitialURL +
         prepSearchString(text.substring(firstWord.length + 1)) +
         "&type=6";
       break;
     case "webserv":
-      newURL =
-        dhInitialURL +
+      newURL = dhInitialURL +
         prepSearchString(text.substring(firstWord.length + 1)) +
         "&type=5&def=0";
       break;
     case "pg":
-      newURL =
-        dhInitialURL +
+      newURL = dhInitialURL +
         prepSearchString(text.substring(firstWord.length + 1)) +
         "&type=2";
       break;
@@ -97,13 +89,23 @@ export function buildUrl(text) {
       newURL = dhInitialURL + prepSearchString(text.substring(7)) + "&type=4";
       break;
     case "cl":
-      newURL =
-        communityLibraryURL +
+      newURL = communityLibraryURL +
         "/#?query=" +
         prepSearchString(text.substring(firstWord.length + 1));
       break;
     case "sp":
       newURL = systemPulseURL;
+      break;
+    case "th":
+      newURL = trainingHome;
+
+      if (secondWord === undefined) {
+        break;
+      } else if (isNaN(secondWord)) {
+        newURL = `${newURL}/CourseCatalog#/?=&Query=${
+          prepSearchString(text.substring(firstWord.length + 1))
+        }`;
+      }
       break;
     default:
       newURL = galaxyInitialURL + prepSearchString(text);

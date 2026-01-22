@@ -5,7 +5,7 @@ Deno.test("test sherlock url", () => {
   const output = buildUrl("sherlock nothing");
   assertEquals(
     output,
-    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing"
+    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing",
   );
 });
 
@@ -13,7 +13,7 @@ Deno.test("test slg string url", () => {
   const output = buildUrl("slg nothing");
   assertEquals(
     output,
-    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing"
+    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing",
   );
 });
 
@@ -26,7 +26,7 @@ Deno.test("test slg id url", () => {
   const output = buildUrl("slg 9016152");
   assertEquals(
     output,
-    "https://sherlock.epic.com/default.aspx?view=slg/search#id=9016152&rv=0"
+    "https://sherlock.epic.com/default.aspx?view=slg/search#id=9016152&rv=0",
   );
 });
 
@@ -34,7 +34,7 @@ Deno.test("test sherlock two word url", () => {
   const output = buildUrl("sherlock nothing nothing");
   assertEquals(
     output,
-    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing%20nothing"
+    "https://sherlock.epic.com/default.aspx?view=slg/search#txt=nothing%20nothing",
   );
 });
 
@@ -42,7 +42,7 @@ Deno.test("test ra url", () => {
   const output = buildUrl("ra nothing");
   assertEquals(
     output,
-    "https://sherlock.epic.com/default.aspx?view=ra/search#txt=nothing"
+    "https://sherlock.epic.com/default.aspx?view=ra/search#txt=nothing",
   );
 });
 
@@ -50,7 +50,7 @@ Deno.test("test nova url", () => {
   const output = buildUrl("nova nothing");
   assertEquals(
     output,
-    "https://nova.epic.com/Search.aspx#addPt1&SearchTerm=nothing"
+    "https://nova.epic.com/Search.aspx#addPt1&SearchTerm=nothing",
   );
 });
 
@@ -68,7 +68,7 @@ Deno.test("test dh url", () => {
   const output = buildUrl("dh nothing");
   assertEquals(
     output,
-    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=1&scf=1,2,3&auf=1"
+    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=1&scf=1,2,3&auf=1",
   );
 });
 
@@ -76,7 +76,7 @@ Deno.test("test cdd url", () => {
   const output = buildUrl("cdd nothing");
   assertEquals(
     output,
-    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=6"
+    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=6",
   );
 });
 
@@ -84,7 +84,7 @@ Deno.test("test webserv url", () => {
   const output = buildUrl("webserv nothing");
   assertEquals(
     output,
-    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=5&def=0"
+    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=5&def=0",
   );
 });
 
@@ -92,7 +92,7 @@ Deno.test("test pg url", () => {
   const output = buildUrl("pg nothing");
   assertEquals(
     output,
-    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=2"
+    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=2",
   );
 });
 
@@ -100,7 +100,7 @@ Deno.test("test metric url", () => {
   const output = buildUrl("metric nothing");
   assertEquals(
     output,
-    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=4"
+    "https://datahandbook.epic.com/Search/Index?SearchWord=nothing&type=4",
   );
 });
 
@@ -112,4 +112,17 @@ Deno.test("test system community library", () => {
 Deno.test("test system pulse url", () => {
   const output = buildUrl("sp");
   assertEquals(output, "https://systempulse.epic.com");
+});
+
+Deno.test("test training home url", () => {
+  const output = buildUrl("th");
+  assertEquals(output, "https://training.epic.com");
+});
+
+Deno.test("test training home url with train track", () => {
+  const output = buildUrl("th caboodle");
+  assertEquals(
+    output,
+    "https://training.epic.com/CourseCatalog#/?=&Query=caboodle",
+  );
 });
