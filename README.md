@@ -27,6 +27,8 @@ https://chromewebstore.google.com/detail/epic-telescope/hmopnknbeaikdikikcjheehh
 | Data Handbook Clarity Dictionary | uw cdd \`search text\`                  | uw cdd appointment tags          |
 | Community Library                | uw cl \`search text\`                   | uw cl blood infusion             |
 | System Pulse                     | uw sp                                   | uw sp                            |
+| Training Home                    | uw th                                   | uw th                            |
+| Training Home Catalog            | uw th \`train track\`                   | uw th caboodle                   |
 
 ## Maintenance
 
